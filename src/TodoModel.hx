@@ -19,8 +19,7 @@ class TodoModel {
 	}
 
 	public function create(text:String, note:String, completed:Bool):TodoVO {
-		var time = Date.now();
-		var id = time.toString();
+		var id = Date.now().toString();
 		var todoVO = new TodoVO(id, text, note, completed);
 		var todoList:Array<String> = cast Wire.data(DataKeys.LIST).value;
 		var count:Int = cast Wire.data(DataKeys.COUNT).value;
